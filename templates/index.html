@@ -4,12 +4,20 @@
 		<meta charset="UTF-8" />
 		<title>French train stations</title>
 		<!--Put logo-->
+<<<<<<< HEAD
 		<link rel="icon" type="image/png" href="../images/logo.png" />
 		<link rel="icon" type="image/png" href="./static/icon.png"/>
+=======
+		<link rel="icon" type="image/png" href="{{url_for('static', filename='logo.png')}}"/>
+>>>>>>> 8b8d83cd6a1a58fe09337c23655a8ab542bc8a3a
 	</head>
 
 	<body>
-		<h1>Map from folium</h1>
+		<h1>Find a station</h1>
+		<form action="" method="post">
+			<input type="text" name="station" id="station" />
+			<input type="submit" value="Search" />
+		</form>
 		{% extends 'maps/map.html' %}
 	</body>
 
