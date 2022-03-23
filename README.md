@@ -11,6 +11,7 @@ This repository contains:
 - All ontology relative files
 - Requirements file
 - Python Web application Flask
+- Notebook used for data collecting preprocessing
  
  ![](/src/demo_site_web.gif)  
  
