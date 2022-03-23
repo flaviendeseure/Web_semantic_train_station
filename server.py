@@ -1,12 +1,12 @@
 from flask import Flask
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 import folium
-from folium import Marker, Circle
+from folium import Marker
 import branca
 
 import json
-from rdflib import RDF, RDFS, Graph, Literal, Namespace, URIRef, BNode, OWL
+from rdflib import RDF, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import XSD
 
 import os
