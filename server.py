@@ -1,6 +1,6 @@
 # librairies requiered for flask
 from flask import Flask
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 #librairies requiered for display the map on the website
 import folium
@@ -119,11 +119,11 @@ def retrieve_data(limit=100):
                 }LIMIT """+ f"{limit}")#here we put the limit to 100 because we want to display only 100 stations on the map for performance reasons
 
     final_list = []
-
     #for each row of the query we create a dictionary with the information of the station
     for row in query1:
         d = {"Latitude":row[0].value, "Longitude":row[1].value, "stationType":row[2].value, "Department":row[3].value, "NamePOI":row[4].value, "Commune":row[5].value}
         final_list.append(d)
+    
     return final_list #return the list of dictionaries
 
 #function to check if a map exist on the server
@@ -136,7 +136,7 @@ def check_map_exists():
         return False
 
 #create a map with the stations on it
-def make_map():
+def make_map(limit=100):
     #coordinates of Paris to arrive directly on Paris
     coords_paris = [48.856614, 2.3522219] 
 
@@ -149,10 +149,9 @@ def make_map():
     # title correspond to the type of map     
     m = folium.Map(location=[coords_paris[0], coords_paris[1]],
                zoom_start=12,
-               tiles="cartodbpositron",
                width='75%',
                height='75%')
-    data = retrieve_data()
+    data = retrieve_data(limit)
 
     #for each station in the list of dictionaries we create a marker on the map with the coordinates of the station
     for row in data:
@@ -163,7 +162,6 @@ def make_map():
             Marker([row["Latitude"], row["Longitude"]], popup=popup, icon=folium.Icon(color="blue", icon='train', prefix='fa')).add_to(m)
         except:
             pass
-
     m.save('templates/maps/map.html')
 
 @app.route('/')
@@ -173,7 +171,7 @@ def display_map():
 
 @app.route('/limit', methods=['POST'])
 def limit():
-    limit = request.form.get('dropdown')
+    limit = request.form['dropdown']
     make_map(int(limit))
     return render_template('index.html')
 
