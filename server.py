@@ -92,8 +92,6 @@ def popup_html(row):
               """
     return html
 
-
-
 def retrieve_data():
     query1 = g.query(
                     """SELECT ?latitude ?longitude ?stationType ?department ?namePOI ?commune
