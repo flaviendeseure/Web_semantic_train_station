@@ -8,16 +8,13 @@
 	</head>
 
 	<style>
-		body{
-			font: 16px system-ui;
-		}
-
 		.body{
 			display: grid;
 			width: 100%;
 			height: 100%;
 			grid-template-columns: 100%;
 			grid-template-rows: 7% 5% 5% 5% 83%;
+			font: 16px system-ui;
 		}
 
 		
@@ -79,7 +76,7 @@
 			</div>
 
 			<div class="limit">
-				<form method="GET" action="/limit">
+				<form method="POST" action="/limit">
 					<select name = "dropdown">
 						<option value = "20">20</option>
 						<option value = "50">50</option>
@@ -91,7 +88,7 @@
 						<option value = "5000">5000</option>
 						<option value = "10000">10000</option>
 						<option value = "20000">20000</option>
-						<option value = "All">all</option>
+						<option value = "50000">All</option>
 					</select>  
 					<input type="submit" value="Set limit"/> 
 				</form>      

@@ -1,6 +1,6 @@
 # librairies requiered for flask
 from flask import Flask
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 #librairies requiered for display the map on the website
 import folium
@@ -171,6 +171,11 @@ def display_map():
     make_map()
     return render_template('index.html')
 
+@app.route('/limit', methods=['POST'])
+def limit():
+    limit = request.form.get('dropdown')
+    make_map(int(limit))
+    return render_template('index.html')
 
 @app.route('/search', methods=['POST'])
 def search():
