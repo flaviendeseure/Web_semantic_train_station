@@ -23340,12 +23340,12 @@ POI_ontology:Stops a owl:Class ;
 
 POI_ontology:Trip a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty POI_ontology:has_travelers ;
+            owl:someValuesFrom POI_ontology:Travelers ],
+        [ a owl:Restriction ;
             owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
             owl:onClass POI_ontology:Stops ;
             owl:onProperty POI_ontology:has_stops ],
-        [ a owl:Restriction ;
-            owl:onProperty POI_ontology:has_travelers ;
-            owl:someValuesFrom POI_ontology:Travelers ],
         POI_ontology:Trip_resources .
 
 POI_ontology:Trip_resources a owl:Class .
