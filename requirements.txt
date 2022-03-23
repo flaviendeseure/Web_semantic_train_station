@@ -1,2 +1,4 @@
 folium
 flask
+branca
+rdflib
