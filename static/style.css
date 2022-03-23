@@ -1,4 +1,4 @@
-form {
+/*form {
 background-color: #4654e1;
 width: 70%;
 height: 10%;
@@ -33,13 +33,26 @@ cursor: pointer;
 width: 44px;
 height: 44px;
 }
-
+*/
 /*.header {
 	width: 100%;
 	height: 100%;
 	display: grid;
 	place-items: center;
 }*/
+
+input {
+	color: #555;
+	outline: none;
+	border: none;
+	padding: 10px 25px;
+}
+
+ion-icon{
+	position: absolute;
+	right: 20px;
+	color: #555;
+}
 
 .header {
 	margin: auto;
