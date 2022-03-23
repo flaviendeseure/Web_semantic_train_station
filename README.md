@@ -16,7 +16,7 @@ This repository contains:
 - Python Web application Flask
 - Notebook used for data collecting preprocessing
  
- ![](/src/demo_site_web.gif)  
+ ![](/presentation/video.gif)  
  
 ## Getting Started
 ### Prerequisites
@@ -26,19 +26,16 @@ git clone https://github.com/flaviendeseure/Web_semantic_train_station.git
 ```
 2. Install python libraries 
 ```bash
+cd Web_semantic_train_station
 pip install -r requirements.txt
 ```
 
 ### Setup the server
-1. Get to the project directory
-```bash
-cd PATH_TO_Web_semantic_train_station/Web_semantic_train_station 
-```
-2. Launch the server
+1. Launch the server
 ```bash
 python server.py
 ```
-3. Go to the url indicate in the bash (generally http://127.0.0.1:5000/)  
+2. Go to the url indicate in the bash (generally http://127.0.0.1:5000/)  
 ⚠️ You must always keep the bash running ! Don't close it.  
   
 ## Authors
