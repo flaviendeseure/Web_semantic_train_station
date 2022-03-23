@@ -1,19 +1,24 @@
+# librairies requiered for flask
 from flask import Flask
 from flask import Flask, render_template
 
+#librairies requiered for display the map on the website
 import folium
 from folium import Marker
 import branca
 
+#librairies requiered for creating graph and turttle file
 import json
 from rdflib import RDF, Graph, Literal, Namespace, URIRef
 from rdflib.namespace import XSD
 
 import os
 
-def create_graph():
+# function to create the graph
+def create_graph(): 
+    # Pick up the ontology file
     identity = Namespace('http://www.example.org/theophane_delbauffe/untitled-ontology#/')
-    onto = Namespace('http://www.example.org/theophane_delbauffe/untitled-ontology#')
+    onto = Namespace('http://www.example.org/theophane_delbauffe/untitled-ontology#') 
 
     # load data in a dictionary from json file
     with open('stations.json') as json_data:
@@ -43,10 +48,14 @@ def create_graph():
     file.close()
     return g
 
+#create the application flask and add the route
 app = Flask(__name__)
+#creation of a graph
 g = create_graph()
 
+#function to create the popup_html for the popup to display the information of the station on the map
 def popup_html(row):
+    #variables from the dataset 
     Latitude = row["Latitude"]
     Longitude = row["Longitude"]
     Station_type = row["stationType"]
@@ -54,9 +63,11 @@ def popup_html(row):
     NamePOI = row["NamePOI"]               
     Commune = row["Commune"]
 
+    #color of the table inside the popup
     left_col_color = "#4654e1"
     right_col_color = "#c7cbfad8"
     
+    #create the html for the popup
     html = """<!DOCTYPE html>
               <html>
               <head>
@@ -92,7 +103,9 @@ def popup_html(row):
               """
     return html
 
+#function to retrieve data from the graph with queries
 def retrieve_data():
+    #query to retrieve all the information of the stations inside the graph
     query1 = g.query(
                     """SELECT ?latitude ?longitude ?stationType ?department ?namePOI ?commune
                 WHERE {
@@ -103,25 +116,37 @@ def retrieve_data():
                     ?station ns1:Department ?department .
                     ?station ns1:NamePOI ?namePOI .
                     ?station ns1:Commune ?commune .
-                }LIMIT 100""")
+                }LIMIT 100""")#here we put the limit to 100 because we want to display only 100 stations on the map for performance reasons
+
     final_list = []
+
+    #for each row of the query we create a dictionary with the information of the station
     for row in query1:
         d = {"Latitude":row[0].value, "Longitude":row[1].value, "stationType":row[2].value, "Department":row[3].value, "NamePOI":row[4].value, "Commune":row[5].value}
         final_list.append(d)
-    return final_list
+    return final_list #return the list of dictionaries
 
+#function to check if a map exist on the server
 def check_map_exists():
-    try:
+    try: #try to open the potential existing file
         f = open('templates/maps/map.html', 'r')
         f.close()
         return True
     except FileNotFoundError:
         return False
 
+#create a map with the stations on it
 def make_map():
-    coords_paris = [48.856614, 2.3522219]
+    #coordinates of Paris to arrive directly on Paris
+    coords_paris = [48.856614, 2.3522219] 
+
+    #ckecking if the map already exists if so, we delete it
     if check_map_exists():
         os.remove('templates/maps/map.html')
+
+    #create a folium map with the coordinates of Paris 
+    # and the zoom level of the map
+    # title correspond to the type of map     
     m = folium.Map(location=[coords_paris[0], coords_paris[1]],
                zoom_start=12,
                tiles="cartodbpositron",
@@ -129,6 +154,7 @@ def make_map():
                height='75%')
     data = retrieve_data()
 
+    #for each station in the list of dictionaries we create a marker on the map with the coordinates of the station
     for row in data:
         html = popup_html(row)
         iframe = branca.element.IFrame(html=html,width=510,height=280)
