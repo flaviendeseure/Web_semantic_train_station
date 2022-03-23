@@ -216,13 +216,13 @@ def search_map(name):
 @app.route('/')
 def display_map():
     make_map()
-    return render_template('index.html')
+    return render_template('index.html') #display the html file
 
 @app.route('/limit', methods=['POST'])
 def limit():
     limit = request.form['dropdown']
     folium_map = make_map(int(limit))
-    return folium_map._repr_html_()
+    return folium_map._repr_html_() #display the map with the new number of stations
 
 @app.route('/search', methods=['POST'])
 def search():
@@ -230,13 +230,7 @@ def search():
     folium_map = search_map(name)
     if not folium_map:
         return render_template('index.html')
-    return folium_map._repr_html_()
-
-@app.route('/type', methods=['POST'])
-def type():
-    start_coords = (46.9540700, 142.7360300)
-    folium_map = folium.Map(location=start_coords, zoom_start=14)
-    return folium_map._repr_html_()
+    return folium_map._repr_html_() #display the map with the new station
 
 if __name__ == '__main__':
-    app.run()
+    app.run() #run the app
