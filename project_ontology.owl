@@ -1,0 +1,457 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology"
+     xml:base="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:POI_ontology="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology">
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#has_station -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#has_station"/>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#has_stops -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#has_stops"/>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#has_travelers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#has_travelers"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Commune -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Commune">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#POI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Department -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Department">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#POI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Latitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Latitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#POI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Longitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Longitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#POI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#NamePOI -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#NamePOI">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#POI"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip_resources"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#adress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#adress">
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#email -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#email">
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#givenName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#givenName">
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#nbTrips -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#nbTrips">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Travelers"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#route_id -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#route_id">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#route_long_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#route_long_name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#route_type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#route_type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#stationType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#stationType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Station"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>FretOrTravelers</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#stop_sequence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#stop_sequence">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Stops"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#stop_time -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#stop_time">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Stops"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#telephone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#telephone">
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/birthday -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/birthday">
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/familyName -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/familyName">
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/gender -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/gender">
+        <rdfs:domain rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#POI -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#POI">
+        <rdfs:comment>Point of interest</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Station -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Station">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#POI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Stops -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Stops">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip_resources"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#has_station"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Station"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Travelers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Travelers">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip_resources"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#has_travelers"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Travelers"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#has_stops"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Stops"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip_resources -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip_resources"/>
+    
+
+
+    <!-- http://www.w3.org/2000/10/swap/pim/contact#Person -->
+
+    <owl:Class rdf:about="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Fidelia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Fidelia">
+        <POI_ontology:adress>37 rue Vacuva 93000</POI_ontology:adress>
+        <POI_ontology:email>fidelia.vacuva@hotmail.com</POI_ontology:email>
+        <POI_ontology:givenName>Fidelia</POI_ontology:givenName>
+        <POI_ontology:nbTrips rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">37</POI_ontology:nbTrips>
+        <POI_ontology:telephone rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0691785664</POI_ontology:telephone>
+        <foaf:birthday>1995-07-02</foaf:birthday>
+        <foaf:familyName>Vacuva</foaf:familyName>
+        <foaf:gender>F</foaf:gender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Le_Soler -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Le_Soler">
+        <POI_ontology:Commune>Le Soler</POI_ontology:Commune>
+        <POI_ontology:Department>PYRENEES-ORIENTALES</POI_ontology:Department>
+        <POI_ontology:Latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">42.67808</POI_ontology:Latitude>
+        <POI_ontology:Longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.7876024</POI_ontology:Longitude>
+        <POI_ontology:NamePOI>Le Soler</POI_ontology:NamePOI>
+        <POI_ontology:stationType>Travelers</POI_ontology:stationType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Netty -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Netty">
+        <POI_ontology:adress>15 avenue Sancho 46000</POI_ontology:adress>
+        <POI_ontology:email>netty.sancho@hotmail.com</POI_ontology:email>
+        <POI_ontology:givenName>Netty</POI_ontology:givenName>
+        <POI_ontology:nbTrips rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">46</POI_ontology:nbTrips>
+        <POI_ontology:telephone rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0668284589</POI_ontology:telephone>
+        <foaf:birthday>1994-06-29</foaf:birthday>
+        <foaf:familyName>Sancho</foaf:familyName>
+        <foaf:gender>M</foaf:gender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Rothau -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Rothau">
+        <POI_ontology:Commune>Rothau</POI_ontology:Commune>
+        <POI_ontology:Department>BAS-RHIN</POI_ontology:Department>
+        <POI_ontology:Latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">48.459225</POI_ontology:Latitude>
+        <POI_ontology:Longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7.2074323</POI_ontology:Longitude>
+        <POI_ontology:NamePOI>Rothau</POI_ontology:NamePOI>
+        <POI_ontology:stationType>Travelers</POI_ontology:stationType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN105330F714606:2022-03-15T10:01:06Z -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN105330F714606:2022-03-15T10:01:06Z">
+        <POI_ontology:has_stops rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN92933R712160:2022-03-17T20:46:48Z-3"/>
+        <POI_ontology:has_travelers rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Fidelia"/>
+        <POI_ontology:Trip_id>OCESN105330F714606:2022-03-15T10:01:06Z</POI_ontology:Trip_id>
+        <POI_ontology:route_id>OCESN-413</POI_ontology:route_id>
+        <POI_ontology:route_long_name>TOURS-ST PIERRE - NAVETTES TGV</POI_ontology:route_long_name>
+        <POI_ontology:route_type>Train</POI_ontology:route_type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN92927R728266:2022-03-17T20:46:48Z -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN92927R728266:2022-03-17T20:46:48Z">
+        <POI_ontology:has_stops rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN92933R712160:2022-03-17T20:46:48Z-4"/>
+        <POI_ontology:has_travelers rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Netty"/>
+        <POI_ontology:Trip_id>OCESN92927R728266:2022-03-17T20:46:48Z</POI_ontology:Trip_id>
+        <POI_ontology:route_id>OCESN-2554251</POI_ontology:route_id>
+        <POI_ontology:route_long_name>Chartres - Orléans (cars)</POI_ontology:route_long_name>
+        <POI_ontology:route_type>Car</POI_ontology:route_type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN92933R712160:2022-03-17T20:46:48Z-3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN92933R712160:2022-03-17T20:46:48Z-3">
+        <POI_ontology:has_station rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Le_Soler"/>
+        <POI_ontology:has_station rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Rothau"/>
+        <POI_ontology:stop_sequence>3</POI_ontology:stop_sequence>
+        <POI_ontology:stop_time>19:46:00</POI_ontology:stop_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN92933R712160:2022-03-17T20:46:48Z-4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#OCESN92933R712160:2022-03-17T20:46:48Z-4">
+        <POI_ontology:has_station rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Le_Soler"/>
+        <POI_ontology:has_station rdf:resource="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Rothau"/>
+        <POI_ontology:stop_sequence>4</POI_ontology:stop_sequence>
+        <POI_ontology:stop_time>20:55:00</POI_ontology:stop_time>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#POI"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/flavi/ontologies/2022/2/POI_ontology#Trip_resources"/>
+            <rdf:Description rdf:about="http://www.w3.org/2000/10/swap/pim/contact#Person"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
