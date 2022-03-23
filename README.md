@@ -26,6 +26,7 @@ git clone https://github.com/flaviendeseure/Web_semantic_train_station.git
 ```
 2. Install python libraries 
 ```bash
+cd Web_semantic_train_station
 pip install -r requirements.txt
 ```
 
