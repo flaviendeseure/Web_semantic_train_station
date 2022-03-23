@@ -75,14 +75,14 @@
 			</div>
 
 			<div class="searchBar">
-				<form id="form">
+				<form id="form" method="POST" action="/search">
 					<input type="search" id="query" name="q" placeholder="Search...">
 					<input type="submit" value="Search"/>      
 				</form> 
 			</div>
 			
 			<div class="filter">
-				<form method="post" action="/Tests/Post/">      
+				<form method="POST" action="/type">      
 					<input type="checkbox" name="station_type" value="Fret Station">Fret Station      
 					<input type="checkbox" name="station_type" value="Travelers Station">Travelers Station     
 					<input type="submit" value="Filter"/>      
