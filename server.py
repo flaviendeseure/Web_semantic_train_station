@@ -163,6 +163,55 @@ def make_map(limit=100):
         except:
             pass
     m.save('templates/maps/map.html')
+    return m
+
+def retrieve_data_search(name):
+    #query to retrieve all the information of the stations inside the graph
+    query1 = g.query(
+                    """SELECT ?latitude ?longitude
+                WHERE {
+                    ?station rdf:type ex:Station .
+                    ?station ns1:Latitude ?latitude .
+                    ?station ns1:Longitude ?longitude .
+                    ?station ns1:NamePOI """ + '"' + name + '"' + """ .
+                }""")#here we put the limit to 100 because we want to display only 100 stations on the map for performance reasons
+
+    final_list = []
+    #for each row of the query we create a dictionary with the information of the station
+    for row in query1:
+        d = {"Latitude":row[0].value, "Longitude":row[1].value}
+        final_list.append(d)
+    
+    return final_list #return the list of dictionaries
+
+def search_map(name):   
+    try:
+        #ckecking if the map already exists if so, we delete it
+        if check_map_exists():
+            os.remove('templates/maps/map.html')
+        coords = retrieve_data_search(name)[0]
+        m = folium.Map(location=[coords[0], coords[1]],
+                zoom_start=14,
+                width='75%',
+                height='75%')
+
+        data = retrieve_data(name)
+
+        #for each station in the list of dictionaries we create a marker on the map with the coordinates of the station
+        for row in data:
+            html = popup_html(row)
+            iframe = branca.element.IFrame(html=html,width=510,height=280)
+            popup = folium.Popup(folium.Html(html, script=True), max_width=500)
+            try:
+                Marker([row["Latitude"], row["Longitude"]], popup=popup, icon=folium.Icon(color="blue", icon='train', prefix='fa')).add_to(m)
+            except:
+                pass
+        m.save('templates/maps/map.html')
+        return m
+
+    except:
+        print("No station found")
+        return False
 
 @app.route('/')
 def display_map():
@@ -172,13 +221,15 @@ def display_map():
 @app.route('/limit', methods=['POST'])
 def limit():
     limit = request.form['dropdown']
-    make_map(int(limit))
-    return render_template('index.html')
+    folium_map = make_map(int(limit))
+    return folium_map._repr_html_()
 
 @app.route('/search', methods=['POST'])
 def search():
-    start_coords = (46.9540700, 142.7360300)
-    folium_map = folium.Map(location=start_coords, zoom_start=14)
+    name = request.form['q']
+    folium_map = search_map(name)
+    if not folium_map:
+        return render_template('index.html')
     return folium_map._repr_html_()
 
 @app.route('/type', methods=['POST'])
