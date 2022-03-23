@@ -17,7 +17,7 @@
 			width: 100%;
 			height: 100%;
 			grid-template-columns: 100%;
-			grid-template-rows: 7% 5% 5% 83%;
+			grid-template-rows: 7% 5% 5% 5% 83%;
 		}
 
 		
@@ -39,7 +39,11 @@
 			display: grid;
 			place-items: center;
 		}
-
+		
+		.limit{
+			display: grid;
+			place-items: center;
+		}
 		
 		.searchBar {
 			display: grid;
@@ -74,7 +78,27 @@
 				<h1>Find a station</h1>
 			</div>
 
+			<div class="limit">
+				<form method="POST" action="/search">
+					<select name = "dropdown">
+						<option value = "20" selected>Maths</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+						<option value = "80">Physics</option>
+					</select>  
+					<input type="submit" value="Set limit"/> 
+				</form>      
+			</div> 
 			<div class="searchBar">
+				</form> 
 				<form id="form" method="POST" action="/search">
 					<input type="search" id="query" name="q" placeholder="Search...">
 					<input type="submit" value="Search"/>      

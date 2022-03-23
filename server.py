@@ -21,12 +21,12 @@ def create_graph():
     onto = Namespace('http://www.example.org/theophane_delbauffe/untitled-ontology#') 
 
     # load data in a dictionary from json file
-    with open('stations.json') as json_data:
+    with open('ontology files/stations.json') as json_data:
         data_dict = json.load(json_data)
 
     # create the graph
     o = Graph(identifier=identity)
-    g = o.parse(location='project_ontology.owl')
+    g = o.parse(location='ontology files/project_ontology.owl')
     g.bind('ex', onto)
     
     # load data in triplestore
@@ -43,7 +43,7 @@ def create_graph():
         g.add((id, identity.Longitude, Literal(data_dict[i]['x_wgs84'], datatype=XSD.float)))
 
     # save turtle file
-    file = open("stations.ttl", "wb")
+    file = open("ontology files/stations.ttl", "wb")
     file.write(bytes(g.serialize(format="turtle"), "UTF-8"))
     file.close()
     return g
@@ -104,7 +104,7 @@ def popup_html(row):
     return html
 
 #function to retrieve data from the graph with queries
-def retrieve_data():
+def retrieve_data(limit=100):
     #query to retrieve all the information of the stations inside the graph
     query1 = g.query(
                     """SELECT ?latitude ?longitude ?stationType ?department ?namePOI ?commune
@@ -116,7 +116,7 @@ def retrieve_data():
                     ?station ns1:Department ?department .
                     ?station ns1:NamePOI ?namePOI .
                     ?station ns1:Commune ?commune .
-                }LIMIT 100""")#here we put the limit to 100 because we want to display only 100 stations on the map for performance reasons
+                }LIMIT """+ f"{limit}")#here we put the limit to 100 because we want to display only 100 stations on the map for performance reasons
 
     final_list = []
 
