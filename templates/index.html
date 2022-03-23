@@ -4,71 +4,8 @@
 		<meta charset="UTF-8" />
 		<title>French train stations</title>
 		<link rel="icon" type="image/png" href="{{url_for('static', filename='logo.png')}}"/>
-		<!--<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}" />-->
+ 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}" />
 	</head>
-
-	<style>
-		.body{
-			display: grid;
-			width: 100%;
-			height: 100%;
-			grid-template-columns: 100%;
-			grid-template-rows: 7% 5% 5% 5% 83%;
-			font: 16px system-ui;
-			background: #c7cbfad8;
-		}
-
-		
-		#form input {
-			color: white;
-			outline: none;
-			border: none;
-			padding: 10px ;
-			background: #4654e1;
-			border-radius: 7px;
-		}
-
-		::placeholder {
-			color: #fff;
-			opacity: 0.7; 
-		}
-
-		.filter{
-			display: grid;
-			place-items: center;
-		}
-		
-		.limit{
-			display: grid;
-			place-items: center;
-		}
-		
-		.searchBar {
-			display: grid;
-			place-items: center;
-		}
-
-		.map {
-			display: flex;
-			justify-content: center;
-			margin-top: 20px;
-		}
-
-		h1{
-			text-align: center;
-		}
-
-		input[type=submit] {
-			background-color: #4654e1;
-			border-radius: 7px;
-			border: none;
-			outline: none;
-			cursor: pointer;
-			padding: 10px;
-			color: white;
-		}
-
-	</style>
 
 	<body>
 		<div class="body">
